@@ -100,13 +100,13 @@ describe "fizzbuzz" do
 
 	[3, 6, 9].each do |i|
 		it "returns fizz when passed multiples of 3 (#{i})" do
-			expect(fizz(i)).to eq "fizz"
+			expect(fizzbuzz(i)).to eq "fizz"
 		end
 	end
 
-	[5, 10, 15].each do |i|
+	[5, 10, 20].each do |i|
 		it "returns buzz when passed multiples of 5 (#{i})" do
-			expect(buzz(i)).to eq "buzz"
+			expect(fizzbuzz(i)).to eq "buzz"
 		end
 	end
 
@@ -118,7 +118,7 @@ describe "fizzbuzz" do
 
 	[4, 6, 7].each do |i|
 		it "returns empty string when passed non-multiples of 3 or 5 (#{i})" do
-			expect(buzz(i)).to eq i.to_s
+			expect(fizzbuzz(i)).to eq i.to_s
 		end
 	end
 
