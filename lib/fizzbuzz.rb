@@ -2,27 +2,27 @@
 
 # true if +n+ divisible by 3, else false
 def div3?(n)
-	n % 3 == 0
+  n % 3 == 0
 end
 
 # true if +n+ divisible by 3, else false
 def div5?(n)
-	n % 5 == 0
+  n % 5 == 0
 end
 
 # true if +n+ divisible by 3 or 5, else false
 def div3or5?(n)
-	div3?(n) || div5?(n)
+  div3?(n) || div5?(n)
 end
 
 # "fizz" if +n+ divisible by 3, else empty string
 def fizz(n)
-	div3?(n) ? "fizz" : ""
+  div3?(n) ? "fizz" : ""
 end
 
 # "buzz" if +n+ divisible by 5, else empty string
 def buzz(n)
-	div5?(n) ? "buzz" : ""
+  div5?(n) ? "buzz" : ""
 end
 
 # "fizz", "buzz" or both if +n+ is divisible by 3 or 5 respectively, else
