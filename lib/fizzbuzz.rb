@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
-# re  urns fizz when +n+ is divisible by 3, buzz when divisible by
-# 5, or bo  h when both are true
+# returns fizz when +n+ is divisible by 3, buzz when divisible by
+# 5, or both when both are true
 def fizzbuzz(n)
-	ou   = ""
+	out = ""
 	if n % 3 == 0
-		ou   += "fizz"
+		out += "fizz"
 	end
 	if n % 5 == 0
-		ou   += "buzz"
+		out += "buzz"
 	end
-	ou  
+	out
 end
