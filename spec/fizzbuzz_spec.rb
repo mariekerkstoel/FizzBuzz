@@ -116,7 +116,7 @@ describe "fizzbuzz" do
 		end
 	end
 
-	[4, 6, 7].each do |i|
+	[4, 8, 7].each do |i|
 		it "returns empty string when passed non-multiples of 3 or 5 (#{i})" do
 			expect(fizzbuzz(i)).to eq i.to_s
 		end
