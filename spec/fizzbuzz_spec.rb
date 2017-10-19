@@ -1,36 +1,125 @@
 #!/usr/bin/env ruby
 require "fizzbuzz"
 
-describe 'fizzbuzz' do
+describe "div3?" do
 
-	(0..50).select { |i| (i % 3 == 0) && (i % 5 != 0) }.each do |i|
-	  it "returns 'fizz' when passed #{i}" do
-			expect(fizzbuzz(i)).to eq "fizz"
-	  end
-	end
-
-	(0..50).select { |i| (i % 5 == 0) && (i % 3 != 0) }.each do |i|
-		it "returns 'buzz' when passed #{i}" do
-			expect(fizzbuzz(i)).to eq "buzz"
+	[3, 6, 9].each do |i|
+		it "returns true when passed multiples of 3" do
+			expect(div3?(i)).to be true
 		end
 	end
 
-	(0..50).select { |i| (i % 5 == 0) && (i % 3 == 0) }.each do |i|
-		it "returns 'fizzbuzz' when passed #{i}" do
+	[4, 5, 7].each do |i|
+		it "returns false when passed non-multiples of 3" do
+			expect(div3?(i)).to be false
+		end
+	end
+
+end
+
+describe "div5?" do
+
+	[5, 10, 15].each do |i|
+		it "returns true when passed multiples of 5" do
+			expect(div5?(i)).to be true
+		end
+	end
+
+	[4, 6, 7].each do |i|
+		it "returns false when passed non-multiples of 5" do
+			expect(div5?(i)).to be false
+		end
+	end
+
+end
+
+describe "div3or5?" do
+
+	[3, 5, 15].each do |i|
+		it "returns true when passed multiples of 3 or 5" do
+			expect(div3?(i)).to be true
+		end
+	end
+
+	[4, 6, 7].each do |i|
+		it "returns false when passed non-multiples of 3 or 5" do
+			expect(div3?(i)).to be false
+		end
+	end
+
+end
+
+describe "div5?" do
+
+	[5, 10, 15].each do |i|
+		it "returns true when passed multiples of 5" do
+			expect(div5?(i)).to be true
+		end
+	end
+
+	[4, 6, 7].each do |i|
+		it "returns false when passed non-multiples of 5" do
+			expect(div5?(i)).to be false
+		end
+	end
+
+end
+describe "fizz" do
+
+	[3, 6, 9].each do |i|
+		it "returns fizz when passed multiples of 3" do
+			expect(fizz(i)).to eq "fizz"
+		end
+	end
+
+	[4, 5, 7].each do |i|
+		it "returns empty string when passed non-multiples of 3" do
+			expect(fizz(i)).to eq ""
+		end
+	end
+
+end
+
+describe "buzz" do
+
+	[5, 10, 15].each do |i|
+		it "returns buzz when passed multiples of 5" do
+			expect(buzz(i)).to eq "buzz"
+		end
+	end
+
+	[4, 6, 7].each do |i|
+		it "returns empty string when passed non-multiples of 5" do
+			expect(buzz(i)).to eq ""
+		end
+	end
+
+end
+
+describe "fizzbuzz" do
+
+	[3, 6, 9].each do |i|
+		it "returns fizz when passed multiples of 3" do
+			expect(fizz(i)).to eq "fizz"
+		end
+	end
+
+	[5, 10, 15].each do |i|
+		it "returns buzz when passed multiples of 5" do
+			expect(buzz(i)).to eq "buzz"
+		end
+	end
+
+	[15, 30, 45].each do |i|
+		it "returns fizzbuzz when passed multiples of 3 and 5" do
 			expect(fizzbuzz(i)).to eq "fizzbuzz"
 		end
 	end
 
-	(0..50).select { |i| (i % 5 != 0) && (i % 3 != 0) }.each do |i|
-		it "returns '' when passed #{i}" do
-			expect(fizzbuzz(i)).to eq ""
+	[4, 6, 7].each do |i|
+		it "returns empty string when passed non-multiples of 3 or 5" do
+			expect(buzz(i)).to eq i.to_s
 		end
 	end
-
-
-
-
-
-
 
 end
